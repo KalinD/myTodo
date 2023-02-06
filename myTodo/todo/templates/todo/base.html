@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>My Todo App</title> {% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo/style.css' %}">
+    <!-- Custom Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    {% block imports %}
+    {% endblock %}
+</head>
+<body>
+    <div id="container">
+    {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

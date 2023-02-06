@@ -1,0 +1,46 @@
+{% extends "todo/base.html" %}
+{% load static %}
+{% block imports %}
+<script src="{% static 'todo/todos.js' %}"></script>
+{% endblock %}
+
+{% block title %}<title>Todos</title>{% endblock %}
+
+{% block content %}
+    <div id="title">
+        <h1>Todos</h1>
+    </div>
+    <div id="add-container">
+        <form id="form" onsubmit="submitForm()">
+            {% csrf_token %}
+            <input id="pk" hidden="hidden">
+            <div class="field-container">
+                <input id="text" type="text" name="text" placeholder="Add todo" >
+            </div>
+            <div id="submit-container">
+                <input id="submit" type="submit">
+            </div>
+        </form>
+    </div>
+    <div class="scrollable">
+        {% for todo in todos %}
+            <div class="todo-container">
+                <div class="todo-item" onclick="changeStatus({{ todo.pk }})">
+                    {% if todo.completed %}
+                        <h2><s>{{ todo.text }}</s></h2>
+                    {% else %}
+                        <h2>{{ todo.text }}</h2>
+                    {% endif %}
+                    <p>{{ todo.updated_at }}</p>
+                </div>
+                <div class="side" onclick="editTodo({{ todo.pk }}, '{{ todo.text }}')">
+                    <img class="icon-img" src="{% static 'todo/icons/edit_icon.svg' %}" />
+                </div>
+                <div class="side" onclick="deleteTodo({{todo.pk}})">
+                    <img class="icon-img" src="{% static 'todo/icons/delete_icon.svg' %}" />
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

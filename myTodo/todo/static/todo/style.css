@@ -1,0 +1,146 @@
+body{
+    background: linear-gradient(90deg, #B00B69, #042069);
+    font-family: 'Poppins', sans-serif;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+}
+
+#title{
+    color: white;
+    margin: 0px auto;
+    padding: 0px 5px;
+    width: fit-content;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Navbar */
+#navbar{
+    display: flex;
+}
+
+.navbar-item{
+    flex: 1;
+}
+
+/* Todo Item */
+.todo-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.todo-item {
+    flex: 8;
+    margin: 5px 15px;
+    padding: 1px 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.todo-item > h2{
+    margin: 0px 5px;
+    color: white;
+}
+
+.todo-item > p{
+    margin: 0px 3px;
+}
+
+.side{
+    flex: 1;
+    display: flex;
+    margin: 5px 15px;
+    padding: 1px 10px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.icon-img{
+    height: 30px;
+    width: 30px;
+}
+
+/* Add Container */
+#form{
+    display: flex;
+    flex-direction: row;
+}
+
+#text{
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #042069;
+    border-color: #B00B69;
+}
+
+#text::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.8; /* Firefox */
+}
+
+#text:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+#text::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+#submit-container{
+    flex: 2;
+    display: flex;
+    margin: 5px 15px;
+    padding: 1px 10px;
+    align-content: center;
+    justify-content: center;
+}
+
+#submit{
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: #042069;
+    background-color: #B00B69;
+}
+
+#add-container{
+    margin: 15px 0px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.field-container{
+    flex: 8;
+    margin: 5px 15px;
+    padding: 1px 10px;
+}
+
+
+.scrollable{
+    max-height: 500px;
+    overflow: auto;
+}
+
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #B00B69;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #420A55;
+}
